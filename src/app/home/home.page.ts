@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
+  rows = [
+    { student: 'Austin', progress: '0.3', action: '...' },
+  ];
 }

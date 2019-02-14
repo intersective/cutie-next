@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { AppModule } from '../app.module';
 import { ComponentsModule } from '../components/components.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { ComponentsModule } from '../components/components.module';
         component: HomePage
       }
     ]),
-    ComponentsModule
+    ComponentsModule,
+    NgxDatatableModule
   ],
   declarations: [HomePage]
 })

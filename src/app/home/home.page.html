@@ -1,7 +1,58 @@
 <app-navbar></app-navbar>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card class="metric-dashboard">
     <app-metric-grid></app-metric-grid>
+  </ion-card>
+  <ion-card class="people-list">
+    <ion-card-header>
+      <ion-card-title>Student progress</ion-card-title>
+    </ion-card-header>
+    <ngx-datatable
+      [rows]="rows"
+      [headerHeight]="48"
+      [rowHeight]="48"
+      [selected]="selected"
+      [selectionType]="'checkbox'"
+      class="material">
+      <ngx-datatable-column
+        [width]="48"
+        [sortable]="false"
+        [canAutoResize]="false"
+        [draggable]="false"
+        [resizeable]="false"
+        [headerCheckboxable]="true"
+        [checkboxable]="true">
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Student"
+        [sortable]="true"
+        [canAutoResize]="false"
+        [draggable]="false"
+        [resizeable]="false">
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Progress"
+        [sortable]="true"
+        [canAutoResize]="false"
+        [draggable]="false"
+        [resizeable]="false">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <ion-progress-bar [value]=value></ion-progress-bar>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Action"
+        [sortable]="true"
+        [canAutoResize]="false"
+        [draggable]="false"
+        [resizeable]="false">
+        <ng-template ngx-datatable-cell-template>
+          <ion-button color="medium" fill="clear" size="small">
+            <ion-icon slot="icon-only" name="more"></ion-icon>
+          </ion-button>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
   </ion-card>
 </ion-content>
