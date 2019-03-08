@@ -16,4 +16,5 @@ export class HomePage {
     { student: 'Dimitry Ricks', progress: '0.68', action: '...' },
     { student: 'Desean Ning', progress: '0.67', action: '...' },
   ];
+  selected = [];
 }
