@@ -5,11 +5,18 @@
     <app-metric-grid></app-metric-grid>
   </ion-card>
   <ion-card class="people-list">
-    <ion-card-header>
-      <ion-card-title>Student progress</ion-card-title>
-    </ion-card-header>
+    <ion-toolbar>
+      <ion-title>Student progress</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button fill="clear" color="primary">Add students</ion-button>
+        <ion-button color="primary">
+          <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
     <ngx-datatable
       [rows]="rows"
+      [columnMode]="'force'"
       [headerHeight]="48"
       [rowHeight]="48"
       [selected]="selected"
@@ -43,6 +50,7 @@
       </ngx-datatable-column>
       <ngx-datatable-column
         name="Action"
+        [width]="128"
         [sortable]="true"
         [canAutoResize]="false"
         [draggable]="false"
@@ -56,3 +64,5 @@
     </ngx-datatable>
   </ion-card>
 </ion-content>
+
+<app-elsa-bar></app-elsa-bar>

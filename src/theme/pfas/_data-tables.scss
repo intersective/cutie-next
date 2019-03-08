@@ -110,3 +110,8 @@ appearance: none;
     margin-bottom: 0;
   }
 }
+
+// Add dividers back to rows
+.datatable-body-row {
+  border-bottom: 0.5px solid var(--ion-color-medium-tint);
+}
