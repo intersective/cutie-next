@@ -1,16 +1,13 @@
 <app-navbar></app-navbar>
 
-<ion-content padding>
-  <ion-card class="metric-dashboard">
-    <app-metric-grid></app-metric-grid>
-  </ion-card>
-  <ion-card class="people-list">
+<ion-content>
+  <app-metric-grid></app-metric-grid>
+  <div class="people-list">
     <ion-toolbar>
       <ion-title>Student progress</ion-title>
       <ion-buttons slot="primary">
-        <ion-button fill="clear" color="primary">Add students</ion-button>
         <ion-button color="primary">
-          <ion-icon slot="icon-only" name="search"></ion-icon>
+          <ion-icon slot="icon-only" name="filter"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -62,7 +59,7 @@
         </ng-template>
       </ngx-datatable-column>
     </ngx-datatable>
-  </ion-card>
+  </div>
 </ion-content>
 
 <app-elsa-bar></app-elsa-bar>
