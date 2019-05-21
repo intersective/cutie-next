@@ -25,4 +25,4 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomeModule {}
