@@ -16,13 +16,22 @@ export class HomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach(st => {
-      this.rows.push({
-        student: st,
-        progress: Array(10).fill({}).map(this.randomProgress),
-        action: '...'
+    setTimeout(() => {
+      const rows = [];
+      ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach(st => {
+        rows.push({
+          student: st,
+          progress: Array(7).fill({}).map(this.randomProgress).concat(Array(3).fill({
+            name: 'assessment name',
+            due_date: '2019-09-08 07:00:00',
+            status: 'not started',
+            overdue: false
+          })),
+          action: '...'
+        });
       });
-    });
+      this.rows = rows;
+    }, 500);
   }
 
   randomProgress(x) {
