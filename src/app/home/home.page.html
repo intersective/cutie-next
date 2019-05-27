@@ -49,8 +49,8 @@
                 <ion-button *ngIf="progress.overdue" color="danger" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
                   <ion-icon name="information-circle-outline"></ion-icon>
                 </ion-button>
-                <ion-button *ngIf="!progress.overdue" class="white" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
-                  <ion-icon name="checkmark"></ion-icon>
+                <ion-button *ngIf="!progress.overdue" color="medium" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
+                  <ion-icon name="remove"></ion-icon>
                 </ion-button>
               </ng-container>
 
