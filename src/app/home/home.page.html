@@ -42,30 +42,34 @@
         [draggable]="false"
         [resizeable]="false">
         <ng-template let-value="value" ngx-datatable-cell-template>
-          <ng-container *ngFor="let progress of value">
+          <div class="progress">
+            <div *ngFor="let progress of value; let i = index" [style.width]="progressWidth(value.length) + '%'">
 
-            <ng-container *ngIf="progress.status === 'not started' || progress.status === 'in progress'">
-              <ion-button *ngIf="progress.overdue" color="danger" fill="clear">
-                <ion-icon name="alert"></ion-icon>
-              </ion-button>
-              <ion-button *ngIf="!progress.overdue" class="white" fill="clear">
-                <ion-icon name="checkmark"></ion-icon>
-              </ion-button>
-            </ng-container>
+              <ng-container *ngIf="progress.status === 'not started' || progress.status === 'in progress'">
+                <ion-button *ngIf="progress.overdue" color="danger" fill="clear">
+                  <ion-icon name="information-circle-outline"></ion-icon>
+                </ion-button>
+                <ion-button *ngIf="!progress.overdue" class="white" fill="clear">
+                  <ion-icon name="checkmark"></ion-icon>
+                </ion-button>
+              </ng-container>
 
-            <ng-container *ngIf="progress.status === 'done' || progress.status === 'published'">
-              <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear">
-                <ion-icon name="checkmark"></ion-icon>
-              </ion-button>
-            </ng-container>
+              <ng-container *ngIf="progress.status === 'done' || progress.status === 'published'">
+                <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear">
+                  <ion-icon name="checkmark"></ion-icon>
+                </ion-button>
+              </ng-container>
 
-            <ng-container *ngIf="progress.status === 'pending review' || progress.status === 'pending approval'">
-              <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear">
-                <ion-icon name="hourglass"></ion-icon>
-              </ion-button>
-            </ng-container>
+              <ng-container *ngIf="progress.status === 'pending review' || progress.status === 'pending approval'">
+                <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear">
+                  <ion-icon name="hourglass"></ion-icon>
+                </ion-button>
+              </ng-container>
 
-          </ng-container>
+              <span color="light" *ngIf="i < value.length - 1">|</span>
+
+            </div>
+          </div>
         </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column

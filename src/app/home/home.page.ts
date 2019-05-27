@@ -27,4 +27,8 @@ export class HomePage implements OnInit {
       overdue: Math.random() > 0.7
     };
   }
+
+  progressWidth(x) {
+    return Math.floor(100/x);
+  }
 }
