@@ -8,6 +8,7 @@ import { HomePage } from './home.page';
 import { AppModule } from '../app.module';
 import { ComponentsModule } from '../components/components.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ProgressPopoverComponent } from '../components/progress-popover/progress-popover.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ComponentsModule,
     NgxDatatableModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  entryComponents: [
+    ProgressPopoverComponent
+  ]
 })
 export class HomeModule {}
