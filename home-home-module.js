@@ -7511,12 +7511,12 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_rxjs_operators__;
 /*!*************************************!*\
   !*** ./src/app/home/home.module.ts ***!
   \*************************************/
-/*! exports provided: HomePageModule */
+/*! exports provided: HomeModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageModule", function() { return HomePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return HomeModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
@@ -7526,6 +7526,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_components_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/components.module */ "./src/app/components/components.module.ts");
 /* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "./node_modules/@swimlane/ngx-datatable/release/index.js");
 /* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/progress-popover/progress-popover.component */ "./src/app/components/progress-popover/progress-popover.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7540,10 +7541,11 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-var HomePageModule = /** @class */ (function () {
-    function HomePageModule() {
+
+var HomeModule = /** @class */ (function () {
+    function HomeModule() {
     }
-    HomePageModule = __decorate([
+    HomeModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
@@ -7558,10 +7560,13 @@ var HomePageModule = /** @class */ (function () {
                 _components_components_module__WEBPACK_IMPORTED_MODULE_6__["ComponentsModule"],
                 _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_7__["NgxDatatableModule"]
             ],
-            declarations: [_home_page__WEBPACK_IMPORTED_MODULE_5__["HomePage"]]
+            declarations: [_home_page__WEBPACK_IMPORTED_MODULE_5__["HomePage"]],
+            entryComponents: [
+                _components_progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_8__["ProgressPopoverComponent"]
+            ]
         })
-    ], HomePageModule);
-    return HomePageModule;
+    ], HomeModule);
+    return HomeModule;
 }());
 
 
@@ -7575,7 +7580,7 @@ var HomePageModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n\n<ion-content>\n  <app-metric-grid></app-metric-grid>\n  <div class=\"people-list\">\n    <ion-toolbar>\n      <ion-title>Student progress</ion-title>\n      <ion-buttons slot=\"primary\">\n        <ion-button color=\"primary\">\n          <ion-icon slot=\"icon-only\" name=\"filter\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n    </ion-toolbar>\n    <ngx-datatable\n      [rows]=\"rows\"\n      [columnMode]=\"'force'\"\n      [headerHeight]=\"48\"\n      [rowHeight]=\"48\"\n      [selected]=\"selected\"\n      [selectionType]=\"'checkbox'\"\n      class=\"material\">\n      <ngx-datatable-column\n        [width]=\"48\"\n        [sortable]=\"false\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\"\n        [headerCheckboxable]=\"true\"\n        [checkboxable]=\"true\">\n      </ngx-datatable-column>\n      <ngx-datatable-column\n        name=\"Student\"\n        [sortable]=\"true\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\">\n      </ngx-datatable-column>\n      <ngx-datatable-column\n        name=\"Progress\"\n        [sortable]=\"true\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\">\n        <ng-template let-value=\"value\" ngx-datatable-cell-template>\n          <ion-progress-bar [value]=value></ion-progress-bar>\n        </ng-template>\n      </ngx-datatable-column>\n      <ngx-datatable-column\n        name=\"Action\"\n        [width]=\"128\"\n        [sortable]=\"true\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\">\n        <ng-template ngx-datatable-cell-template>\n          <ion-button color=\"medium\" fill=\"clear\" size=\"small\">\n            <ion-icon slot=\"icon-only\" name=\"more\"></ion-icon>\n          </ion-button>\n        </ng-template>\n      </ngx-datatable-column>\n    </ngx-datatable>\n  </div>\n</ion-content>\n\n<app-elsa-bar></app-elsa-bar>"
+module.exports = "<app-navbar></app-navbar>\n\n<ion-content>\n  <app-metric-grid></app-metric-grid>\n  <div class=\"people-list\">\n    <ion-toolbar>\n      <ion-title>Student progress</ion-title>\n      <ion-buttons slot=\"primary\">\n        <ion-button color=\"primary\">\n          <ion-icon slot=\"icon-only\" name=\"funnel\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n    </ion-toolbar>\n    <ngx-datatable\n      [rows]=\"rows\"\n      [columnMode]=\"'force'\"\n      [headerHeight]=\"48\"\n      [footerHeight]=\"48\"\n      [rowHeight]=\"48\"\n      [selected]=\"selected\"\n      [selectionType]=\"'checkbox'\"\n      [limit]=\"limit\"\n      [offset]=\"offset\"\n      [count]=\"count\"\n      externalPaging=true\n      externalSorting=true\n      [loadingIndicator]=\"loading\"\n      class=\"material\">\n      <ngx-datatable-column\n        [width]=\"48\"\n        [sortable]=\"false\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\"\n        [headerCheckboxable]=\"true\"\n        [checkboxable]=\"true\">\n      </ngx-datatable-column>\n      <ngx-datatable-column\n        name=\"Student\"\n        [sortable]=\"true\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\">\n      </ngx-datatable-column>\n      <ngx-datatable-column\n        name=\"Progress\"\n        [sortable]=\"true\"\n        [canAutoResize]=\"true\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\">\n        <ng-template let-value=\"value\" let-rowIndex=\"rowIndex\" ngx-datatable-cell-template>\n          <div class=\"cell\">\n            <ion-button\n              class=\"btn-scroll-left\"\n              color=\"medium\"\n              fill=\"clear\"\n              (click)=\"scrollLeft(rowIndex)\"\n              *ngIf=\"progressRef.scrollWidth > progressRef.offsetWidth\">\n              <ion-icon name=\"arrow-dropleft\"></ion-icon>\n            </ion-button>\n\n            <div class=\"progress\" #progressRef>\n              <div *ngFor=\"let progress of value; let i = index\" [style.width]=\"progressWidth(value.length) + '%'\" #iconRef>\n\n                <ng-container *ngIf=\"progress.status === 'not started' || progress.status === 'in progress'\">\n                  <ion-button *ngIf=\"progress.overdue\" color=\"danger\" fill=\"clear\" (click)=\"presentPopover($event, progress)\">\n                    <ion-icon name=\"information-circle-outline\"></ion-icon>\n                  </ion-button>\n                  <ion-button *ngIf=\"!progress.overdue\" color=\"medium\" fill=\"clear\" (click)=\"presentPopover($event, progress)\">\n                    <ion-icon name=\"radio-button-off\"></ion-icon>\n                  </ion-button>\n                </ng-container>\n\n                <ng-container *ngIf=\"progress.status === 'done' || progress.status === 'published'\">\n                  <ion-button [color]=\"progress.overdue ? 'warning' : 'success'\" fill=\"clear\" (click)=\"presentPopover($event, progress)\">\n                    <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\n                  </ion-button>\n                </ng-container>\n\n                <ng-container *ngIf=\"progress.status === 'pending review' || progress.status === 'pending approval'\">\n                  <ion-button [color]=\"progress.overdue ? 'warning' : 'success'\" fill=\"clear\" (click)=\"presentPopover($event, progress)\">\n                    <ion-icon name=\"hourglass\"></ion-icon>\n                  </ion-button>\n                </ng-container>\n\n                <span color=\"light\" *ngIf=\"i < value.length - 1 && iconRef.offsetWidth >= 60\">|</span>\n\n              </div>\n            </div>\n\n            <ion-button\n              class=\"btn-scroll-right\"\n              color=\"medium\"\n              fill=\"clear\"\n              (click)=\"scrollRight(rowIndex)\"\n              *ngIf=\"progressRef.scrollWidth > progressRef.offsetWidth\">\n              <ion-icon name=\"arrow-dropright\"></ion-icon>\n            </ion-button>\n          </div>\n        </ng-template>\n      </ngx-datatable-column>\n      <ngx-datatable-column\n        name=\"Action\"\n        [width]=\"90\"\n        [sortable]=\"true\"\n        [canAutoResize]=\"false\"\n        [draggable]=\"false\"\n        [resizeable]=\"false\">\n        <ng-template ngx-datatable-cell-template>\n          <ion-button color=\"medium\" fill=\"clear\" size=\"small\">\n            <ion-icon slot=\"icon-only\" name=\"more\"></ion-icon>\n          </ion-button>\n        </ng-template>\n      </ngx-datatable-column>\n    </ngx-datatable>\n  </div>\n</ion-content>\n\n<!-- <app-elsa-bar></app-elsa-bar> -->"
 
 /***/ }),
 
@@ -7586,7 +7591,7 @@ module.exports = "<app-navbar></app-navbar>\n\n<ion-content>\n  <app-metric-grid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "app-metric-grid,\n.people-list {\n  margin-bottom: 24px;\n  margin-top: 0;\n  margin-right: 0;\n  margin-left: 0;\n  overflow: hidden; }\n\nion-content {\n  --background: var(--ion-background-color); }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zaGF3bm1hL0RvY3VtZW50cy9HaXRIdWIvY3V0aWUtbmV4dC9zcmMvYXBwL2hvbWUvaG9tZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQ0E7O0VBRUUsbUJBQW1CO0VBQ25CLGFBQWE7RUFDYixlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQixFQUFBOztBQUdsQjtFQUNFLHlDQUFhLEVBQUEiLCJmaWxlIjoic3JjL2FwcC9ob21lL2hvbWUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG5hcHAtbWV0cmljLWdyaWQsXG4ucGVvcGxlLWxpc3Qge1xuICBtYXJnaW4tYm90dG9tOiAyNHB4O1xuICBtYXJnaW4tdG9wOiAwO1xuICBtYXJnaW4tcmlnaHQ6IDA7XG4gIG1hcmdpbi1sZWZ0OiAwO1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG5pb24tY29udGVudCB7XG4gIC0tYmFja2dyb3VuZDogdmFyKC0taW9uLWJhY2tncm91bmQtY29sb3IpO1xufSJdfQ== */"
+module.exports = "app-metric-grid,\n.people-list {\n  margin-bottom: 24px;\n  margin-top: 0;\n  margin-right: 0;\n  margin-left: 0;\n  overflow: hidden; }\n\nion-content {\n  --background: var(--ion-background-color); }\n\n.cell {\n  position: relative;\n  padding-right: 20px; }\n\n.btn-scroll-left {\n  float: left;\n  --padding-start: 0;\n  --padding-end: 0; }\n\n.btn-scroll-right {\n  position: absolute;\n  top: 0;\n  right: 0;\n  --padding-start: 0;\n  --padding-end: 0; }\n\n.progress {\n  overflow-x: scroll;\n  -ms-overflow-style: none;\n  scrollbar-width: none; }\n\n.progress::-webkit-scrollbar {\n    display: none; }\n\n.progress div {\n    display: inline-block;\n    min-width: 30px; }\n\n.progress ion-button {\n    width: 100%;\n    vertical-align: middle;\n    --padding-start: 0;\n    --padding-end: 0; }\n\n.progress span {\n    color: var(--ion-color-medium);\n    vertical-align: middle; }\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9zaGF3bm1hL0RvY3VtZW50cy9HaXRIdWIvY3V0aWUtbmV4dC9zcmMvYXBwL2hvbWUvaG9tZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUUsbUJBQW1CO0VBQ25CLGFBQWE7RUFDYixlQUFlO0VBQ2YsY0FBYztFQUNkLGdCQUFnQixFQUFBOztBQUdsQjtFQUNFLHlDQUFhLEVBQUE7O0FBRWY7RUFDRSxrQkFBa0I7RUFDbEIsbUJBQW1CLEVBQUE7O0FBR3JCO0VBQ0UsV0FBVztFQUNYLGtCQUFnQjtFQUNoQixnQkFBYyxFQUFBOztBQUVoQjtFQUNFLGtCQUFrQjtFQUNsQixNQUFNO0VBQ04sUUFBUTtFQUNSLGtCQUFnQjtFQUNoQixnQkFBYyxFQUFBOztBQUdoQjtFQUNFLGtCQUFrQjtFQUNsQix3QkFBd0I7RUFDeEIscUJBQXFCLEVBQUE7O0FBSHZCO0lBS0ksYUFBYSxFQUFBOztBQUxqQjtJQVFJLHFCQUFxQjtJQUNyQixlQUFlLEVBQUE7O0FBVG5CO0lBWUksV0FBVztJQUNYLHNCQUFzQjtJQUN0QixrQkFBZ0I7SUFDaEIsZ0JBQWMsRUFBQTs7QUFmbEI7SUFrQkksOEJBQThCO0lBQzlCLHNCQUFzQixFQUFBIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImFwcC1tZXRyaWMtZ3JpZCxcbi5wZW9wbGUtbGlzdCB7XG4gIG1hcmdpbi1ib3R0b206IDI0cHg7XG4gIG1hcmdpbi10b3A6IDA7XG4gIG1hcmdpbi1yaWdodDogMDtcbiAgbWFyZ2luLWxlZnQ6IDA7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbmlvbi1jb250ZW50IHtcbiAgLS1iYWNrZ3JvdW5kOiB2YXIoLS1pb24tYmFja2dyb3VuZC1jb2xvcik7XG59XG4uY2VsbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgcGFkZGluZy1yaWdodDogMjBweDtcbn1cblxuLmJ0bi1zY3JvbGwtbGVmdCB7XG4gIGZsb2F0OiBsZWZ0O1xuICAtLXBhZGRpbmctc3RhcnQ6IDA7XG4gIC0tcGFkZGluZy1lbmQ6IDA7XG59XG4uYnRuLXNjcm9sbC1yaWdodCB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgdG9wOiAwO1xuICByaWdodDogMDtcbiAgLS1wYWRkaW5nLXN0YXJ0OiAwO1xuICAtLXBhZGRpbmctZW5kOiAwO1xufVxuXG4ucHJvZ3Jlc3Mge1xuICBvdmVyZmxvdy14OiBzY3JvbGw7XG4gIC1tcy1vdmVyZmxvdy1zdHlsZTogbm9uZTtcbiAgc2Nyb2xsYmFyLXdpZHRoOiBub25lO1xuICAmOjotd2Via2l0LXNjcm9sbGJhciB7XG4gICAgZGlzcGxheTogbm9uZTsgIC8vIFNhZmFyaSBhbmQgQ2hyb21lXG4gIH1cbiAgZGl2IHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgbWluLXdpZHRoOiAzMHB4O1xuICB9XG4gIGlvbi1idXR0b24ge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gICAgLS1wYWRkaW5nLXN0YXJ0OiAwO1xuICAgIC0tcGFkZGluZy1lbmQ6IDA7XG4gIH1cbiAgc3BhbiB7XG4gICAgY29sb3I6IHZhcigtLWlvbi1jb2xvci1tZWRpdW0pO1xuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG4gIH1cbn0iXX0= */"
 
 /***/ }),
 
@@ -7601,33 +7606,157 @@ module.exports = "app-metric-grid,\n.people-list {\n  margin-bottom: 24px;\n  ma
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePage", function() { return HomePage; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _components_progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/progress-popover/progress-popover.component */ "./src/app/components/progress-popover/progress-popover.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
 
 var HomePage = /** @class */ (function () {
-    function HomePage() {
-        this.rows = [
-            { student: 'Caramel Dundee', progress: '0.81', action: '...' },
-            { student: 'Gosinder Shah', progress: '0.79', action: '...' },
-            { student: 'Mein Black', progress: '0.79', action: '...' },
-            { student: 'Gos Baxter', progress: '0.76', action: '...' },
-            { student: 'Monday Blighton', progress: '0.75', action: '...' },
-            { student: 'Joreis Park', progress: '0.70', action: '...' },
-            { student: 'Dimitry Ricks', progress: '0.68', action: '...' },
-            { student: 'Desean Ning', progress: '0.67', action: '...' },
-        ];
+    function HomePage(popoverController) {
+        this.popoverController = popoverController;
+        this.rows = [];
         this.selected = [];
+        this.limit = 10;
+        this.offset = 0;
+        this.count = 20;
+        this.loading = false;
     }
+    HomePage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.loading = true;
+        setTimeout(function () {
+            var rows = [];
+            ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach(function (st) {
+                rows.push({
+                    student: st,
+                    progress: [],
+                    action: '...'
+                });
+            });
+            _this.rows = rows;
+            _this.loading = false;
+        }, 1000);
+        setTimeout(function () {
+            _this.getProgress();
+        }, 2000);
+    };
+    HomePage.prototype.getProgress = function () {
+        var _this = this;
+        var index = this.rows.findIndex(function (row) {
+            return row.progress.length === 0;
+        });
+        this.rows[index].progress = Array(10).fill({}).map(this.randomProgress).concat(Array(5).fill({
+            name: 'assessment name',
+            due_date: '2019-09-08 07:00:00',
+            status: 'not started',
+            overdue: false
+        }));
+        this.rows = this.rows.slice();
+        index = this.rows.findIndex(function (row) {
+            return row.progress.length === 0;
+        });
+        if (index >= 0) {
+            setTimeout(function () {
+                _this.getProgress();
+            }, 1000);
+        }
+    };
+    HomePage.prototype.randomProgress = function (x) {
+        var status = ['not started', 'in progress', 'done', 'pending review', 'pending approval', 'published'];
+        return {
+            name: 'assessment name',
+            due_date: '2019-01-08 07:00:00',
+            status: status[Math.floor(Math.random() * status.length)],
+            overdue: Math.random() > 0.7
+        };
+    };
+    HomePage.prototype.presentPopover = function (ev, progress) {
+        return __awaiter(this, void 0, void 0, function () {
+            var popover;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.popoverController.create({
+                            component: _components_progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_2__["ProgressPopoverComponent"],
+                            event: ev,
+                            componentProps: {
+                                progress: progress
+                            },
+                            mode: 'ios'
+                        })];
+                    case 1:
+                        popover = _a.sent();
+                        return [4 /*yield*/, popover.present()];
+                    case 2: return [2 /*return*/, _a.sent()];
+                }
+            });
+        });
+    };
+    HomePage.prototype.progressWidth = function (x) {
+        return Math.floor(100 / x);
+    };
+    HomePage.prototype.scrollLeft = function (i) {
+        var elementRef = this.progressRefs.toArray()[i];
+        elementRef.nativeElement.scrollTo({ left: elementRef.nativeElement.scrollLeft - 100 });
+    };
+    HomePage.prototype.scrollRight = function (i) {
+        var elementRef = this.progressRefs.toArray()[i];
+        elementRef.nativeElement.scrollTo({ left: elementRef.nativeElement.scrollLeft + 100 });
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChildren"])('progressRef', { read: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_0__["QueryList"])
+    ], HomePage.prototype, "progressRefs", void 0);
     HomePage = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-home',
             template: __webpack_require__(/*! ./home.page.html */ "./src/app/home/home.page.html"),
             styles: [__webpack_require__(/*! ./home.page.scss */ "./src/app/home/home.page.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_1__["PopoverController"]])
     ], HomePage);
     return HomePage;
 }());

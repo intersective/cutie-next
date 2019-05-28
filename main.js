@@ -837,9 +837,13 @@ module.exports = webpackAsyncContext;
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./home/home.module": [
+	"../home/home.module": [
 		"./src/app/home/home.module.ts",
 		"home-home-module"
+	],
+	"./menu/menu.module": [
+		"./src/app/menu/menu.module.ts",
+		"menu-menu-module"
 	]
 };
 function webpackAsyncContext(req) {
@@ -885,8 +889,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', loadChildren: './home/home.module#HomePageModule' },
+    { path: '', loadChildren: './menu/menu.module#MenuModule' },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -911,7 +914,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-split-pane>\n    <!--  our side menu  -->\n    <ion-menu class=\"drawer\">\n      <ion-header>\n        <ion-toolbar>\n          <img src=\"/assets/practera-mark.svg\" alt=\"Practera\">\n        </ion-toolbar>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <ion-item lines=\"none\">\n            <ion-button fill=\"clear\" size=\"large\" color=\"dark\">Dashboard</ion-button>\n          </ion-item>\n          <ion-item lines=\"none\">\n            <ion-button fill=\"clear\" size=\"large\" color=\"medium\">Enrolments</ion-button>\n          </ion-item>\n          <ion-item lines=\"none\">\n            <ion-button fill=\"clear\" size=\"large\" color=\"medium\">Team</ion-button>\n          </ion-item>\n        </ion-list>\n      </ion-content>\n      <ion-footer>\n        <ion-toolbar>\n          <ion-buttons>\n            <ion-button color=\"medium\" fill=\"clear\" shape=\"round\">\n              <ion-avatar>\n                <img src=\"/assets/placeholders/admin-profile-picture.png\" alt=\"Admin\">\n              </ion-avatar>\n            </ion-button>\n            <ion-button color=\"medium\" fill=\"clear\" shape=\"round\">\n              <ion-icon slot=\"icon-only\" name=\"chatbubbles\"></ion-icon>\n            </ion-button>\n            <ion-button color=\"medium\" fill=\"clear\" shape=\"round\">\n              <ion-icon slot=\"icon-only\" name=\"phone-portrait\"></ion-icon>\n            </ion-button>\n          </ion-buttons>\n        </ion-toolbar>\n      </ion-footer>\n    </ion-menu>\n  \n    <!-- the main content -->\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n"
+module.exports = "<ion-router-outlet></ion-router-outlet>"
 
 /***/ }),
 
@@ -1061,6 +1064,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _metric_grid_metric_grid_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./metric-grid/metric-grid.component */ "./src/app/components/metric-grid/metric-grid.component.ts");
 /* harmony import */ var _elsa_bar_elsa_bar_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./elsa-bar/elsa-bar.component */ "./src/app/components/elsa-bar/elsa-bar.component.ts");
 /* harmony import */ var _elsa_ghost_elsa_ghost_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./elsa-ghost/elsa-ghost.component */ "./src/app/components/elsa-ghost/elsa-ghost.component.ts");
+/* harmony import */ var _progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./progress-popover/progress-popover.component */ "./src/app/components/progress-popover/progress-popover.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1075,17 +1079,31 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var ComponentsModule = /** @class */ (function () {
     function ComponentsModule() {
     }
     ComponentsModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            declarations: [_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], _metric_pane_metric_pane_component__WEBPACK_IMPORTED_MODULE_4__["MetricPaneComponent"], _metric_grid_metric_grid_component__WEBPACK_IMPORTED_MODULE_5__["MetricGridComponent"], _elsa_bar_elsa_bar_component__WEBPACK_IMPORTED_MODULE_6__["ElsaBarComponent"], _elsa_ghost_elsa_ghost_component__WEBPACK_IMPORTED_MODULE_7__["ElsaGhostComponent"]],
+            declarations: [
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"],
+                _metric_pane_metric_pane_component__WEBPACK_IMPORTED_MODULE_4__["MetricPaneComponent"],
+                _metric_grid_metric_grid_component__WEBPACK_IMPORTED_MODULE_5__["MetricGridComponent"],
+                _elsa_bar_elsa_bar_component__WEBPACK_IMPORTED_MODULE_6__["ElsaBarComponent"],
+                _elsa_ghost_elsa_ghost_component__WEBPACK_IMPORTED_MODULE_7__["ElsaGhostComponent"],
+                _progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_8__["ProgressPopoverComponent"]
+            ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
                 _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["IonicModule"]
             ],
-            exports: [_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"], _metric_pane_metric_pane_component__WEBPACK_IMPORTED_MODULE_4__["MetricPaneComponent"], _metric_grid_metric_grid_component__WEBPACK_IMPORTED_MODULE_5__["MetricGridComponent"], _elsa_bar_elsa_bar_component__WEBPACK_IMPORTED_MODULE_6__["ElsaBarComponent"]]
+            exports: [
+                _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_3__["NavbarComponent"],
+                _metric_pane_metric_pane_component__WEBPACK_IMPORTED_MODULE_4__["MetricPaneComponent"],
+                _metric_grid_metric_grid_component__WEBPACK_IMPORTED_MODULE_5__["MetricGridComponent"],
+                _elsa_bar_elsa_bar_component__WEBPACK_IMPORTED_MODULE_6__["ElsaBarComponent"],
+                _progress_popover_progress_popover_component__WEBPACK_IMPORTED_MODULE_8__["ProgressPopoverComponent"]
+            ]
         })
     ], ComponentsModule);
     return ComponentsModule;
@@ -1404,6 +1422,73 @@ var NavbarComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], NavbarComponent);
     return NavbarComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/progress-popover/progress-popover.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/progress-popover/progress-popover.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div padding>\n  <div>\n    <b>{{ progress.name }}</b>\n  </div>\n  <div>\n    <b>Due Date:</b> {{ progress.due_date }}\n  </div>\n  <div>\n    <b>Status:</b> {{ progress.status }}\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/progress-popover/progress-popover.component.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/progress-popover/progress-popover.component.scss ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZ3Jlc3MtcG9wb3Zlci9wcm9ncmVzcy1wb3BvdmVyLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/components/progress-popover/progress-popover.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/progress-popover/progress-popover.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: ProgressPopoverComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressPopoverComponent", function() { return ProgressPopoverComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProgressPopoverComponent = /** @class */ (function () {
+    function ProgressPopoverComponent() {
+    }
+    ProgressPopoverComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Object)
+    ], ProgressPopoverComponent.prototype, "progress", void 0);
+    ProgressPopoverComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-progress-popover',
+            template: __webpack_require__(/*! ./progress-popover.component.html */ "./src/app/components/progress-popover/progress-popover.component.html"),
+            styles: [__webpack_require__(/*! ./progress-popover.component.scss */ "./src/app/components/progress-popover/progress-popover.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ProgressPopoverComponent);
+    return ProgressPopoverComponent;
 }());
 
 
