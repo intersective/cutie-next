@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { ProgressPopoverComponent } from '../components/progress-popover/progress-popover.component';
 
@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   offset = 0;
   count = 20;
   loading = false;
+  @ViewChildren('progressRef', {read: ElementRef}) progressRefs: QueryList<ElementRef>;
 
   constructor(
     public popoverController: PopoverController
@@ -42,7 +43,7 @@ export class HomePage implements OnInit {
     let index = this.rows.findIndex(row => {
       return row.progress.length === 0;
     });
-    this.rows[index].progress = Array(10).fill({}).map(this.randomProgress).concat(Array(3).fill({
+    this.rows[index].progress = Array(10).fill({}).map(this.randomProgress).concat(Array(5).fill({
       name: 'assessment name',
       due_date: '2019-09-08 07:00:00',
       status: 'not started',
@@ -83,5 +84,15 @@ export class HomePage implements OnInit {
 
   progressWidth(x) {
     return Math.floor(100/x);
+  }
+
+  scrollLeft(i) {
+    const elementRef = this.progressRefs.toArray()[i];
+    elementRef.nativeElement.scrollTo({left: elementRef.nativeElement.scrollLeft - 100});
+  }
+
+  scrollRight(i) {
+    const elementRef = this.progressRefs.toArray()[i];
+    elementRef.nativeElement.scrollTo({left: elementRef.nativeElement.scrollLeft + 100});
   }
 }
