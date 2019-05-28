@@ -10,35 +10,60 @@ import { ProgressPopoverComponent } from '../components/progress-popover/progres
 export class HomePage implements OnInit {
   rows = [];
   selected = [];
+  limit = 10;
+  offset = 0;
+  count = 20;
+  loading = false;
 
   constructor(
     public popoverController: PopoverController
   ) {}
 
   ngOnInit() {
+    this.loading = true;
     setTimeout(() => {
       const rows = [];
       ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach(st => {
         rows.push({
           student: st,
-          progress: Array(7).fill({}).map(this.randomProgress).concat(Array(3).fill({
-            name: 'assessment name',
-            due_date: '2019-09-08 07:00:00',
-            status: 'not started',
-            overdue: false
-          })),
+          progress: [],
           action: '...'
         });
       });
       this.rows = rows;
-    }, 500);
+      this.loading = false;
+    }, 1000);
+    setTimeout(() => {
+      this.getProgress();
+    }, 2000);
+  }
+
+  getProgress() {
+    let index = this.rows.findIndex(row => {
+      return row.progress.length === 0;
+    });
+    this.rows[index].progress = Array(10).fill({}).map(this.randomProgress).concat(Array(3).fill({
+      name: 'assessment name',
+      due_date: '2019-09-08 07:00:00',
+      status: 'not started',
+      overdue: false
+    }));
+    this.rows = [...this.rows];
+    index = this.rows.findIndex(row => {
+      return row.progress.length === 0;
+    });
+    if (index >= 0) {
+      setTimeout(() => {
+        this.getProgress();
+      }, 1000);
+    }
   }
 
   randomProgress(x) {
     const status = ['not started', 'in progress', 'done', 'pending review', 'pending approval', 'published'];
     return {
       name: 'assessment name',
-      due_date: '2019-09-08 07:00:00',
+      due_date: '2019-01-08 07:00:00',
       status: status[Math.floor( Math.random() * status.length )],
       overdue: Math.random() > 0.7
     };

@@ -7,7 +7,7 @@
       <ion-title>Student progress</ion-title>
       <ion-buttons slot="primary">
         <ion-button color="primary">
-          <ion-icon slot="icon-only" name="filter"></ion-icon>
+          <ion-icon slot="icon-only" name="funnel"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
@@ -15,9 +15,16 @@
       [rows]="rows"
       [columnMode]="'force'"
       [headerHeight]="48"
+      [footerHeight]="48"
       [rowHeight]="48"
       [selected]="selected"
       [selectionType]="'checkbox'"
+      [limit]="limit"
+      [offset]="offset"
+      [count]="count"
+      externalPaging=true
+      externalSorting=true
+      [loadingIndicator]="loading"
       class="material">
       <ngx-datatable-column
         [width]="48"
@@ -46,22 +53,22 @@
             <div *ngFor="let progress of value; let i = index" [style.width]="progressWidth(value.length) + '%'">
 
               <ng-container *ngIf="progress.status === 'not started' || progress.status === 'in progress'">
-                <ion-button *ngIf="progress.overdue" color="danger" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
+                <ion-button *ngIf="progress.overdue" color="danger" fill="clear" (click)="presentPopover($event, progress)">
                   <ion-icon name="information-circle-outline"></ion-icon>
                 </ion-button>
-                <ion-button *ngIf="!progress.overdue" color="medium" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
+                <ion-button *ngIf="!progress.overdue" color="medium" fill="clear" (click)="presentPopover($event, progress)">
                   <ion-icon name="radio-button-off"></ion-icon>
                 </ion-button>
               </ng-container>
 
               <ng-container *ngIf="progress.status === 'done' || progress.status === 'published'">
-                <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
+                <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear" (click)="presentPopover($event, progress)">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
                 </ion-button>
               </ng-container>
 
               <ng-container *ngIf="progress.status === 'pending review' || progress.status === 'pending approval'">
-                <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear" (click)="presentPopover($event, progress)" (mouseenter)="presentPopover($event, progress)">
+                <ion-button [color]="progress.overdue ? 'warning' : 'success'" fill="clear" (click)="presentPopover($event, progress)">
                   <ion-icon name="hourglass"></ion-icon>
                 </ion-button>
               </ng-container>
@@ -89,4 +96,4 @@
   </div>
 </ion-content>
 
-<app-elsa-bar></app-elsa-bar>
+<!-- <app-elsa-bar></app-elsa-bar> -->
