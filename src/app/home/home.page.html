@@ -25,7 +25,8 @@
       externalPaging=true
       externalSorting=true
       [loadingIndicator]="loading"
-      class="material">
+      class="material"
+      margin-horizontal>
       <ngx-datatable-column
         [width]="48"
         [sortable]="false"
@@ -41,6 +42,14 @@
         [canAutoResize]="false"
         [draggable]="false"
         [resizeable]="false">
+        <ng-template let-value="value" ngx-datatable-cell-template>
+          <div class="student">
+            <ion-avatar>
+              <img src="./assets/placeholders/admin-profile-picture.png" alt="Admin">
+            </ion-avatar>
+            {{ value }}
+          </div>
+        </ng-template>
       </ngx-datatable-column>
       <ngx-datatable-column
         name="Progress"
