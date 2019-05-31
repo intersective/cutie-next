@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { HomeComponent } from './home.component';
 import { AppModule } from '../app.module';
 import { ComponentsModule } from '../components/components.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -18,13 +18,13 @@ import { ProgressPopoverComponent } from '../components/progress-popover/progres
     RouterModule.forChild([
       {
         path: '',
-        component: HomePage
+        component: HomeComponent
       }
     ]),
     ComponentsModule,
     NgxDatatableModule
   ],
-  declarations: [HomePage],
+  declarations: [HomeComponent],
   entryComponents: [
     ProgressPopoverComponent
   ]
