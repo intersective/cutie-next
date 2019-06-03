@@ -34,7 +34,7 @@
     </ngx-datatable-column> -->
     <ngx-datatable-column
       name="Student"
-      [sortable]="true"
+      [sortable]="false"
       [canAutoResize]="false"
       [draggable]="false"
       [resizeable]="false">
@@ -46,6 +46,14 @@
           {{ value }}
         </div>
       </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column
+      name="Team"
+      [width]="90"
+      [sortable]="false"
+      [canAutoResize]="false"
+      [draggable]="false"
+      [resizeable]="false">
     </ngx-datatable-column>
     <ngx-datatable-column
       name="Progress"

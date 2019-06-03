@@ -27,6 +27,7 @@ export class ProgressTableComponent implements OnInit {
       ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach(st => {
         rows.push({
           student: st,
+          team: this.randomTeam(),
           progress: []
         });
       });
@@ -57,6 +58,16 @@ export class ProgressTableComponent implements OnInit {
         this.getProgress();
       }, 1000);
     }
+  }
+
+  randomTeam() {
+    if (Math.random() < 0.3) {
+      return 'Team 1';
+    }
+    if (Math.random() < 0.6) {
+      return 'Team 2';
+    }
+    return '';
   }
 
   randomProgress(x) {
