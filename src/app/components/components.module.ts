@@ -6,7 +6,6 @@ import { MetricPaneComponent } from './metric-pane/metric-pane.component';
 import { MetricGridComponent } from './metric-grid/metric-grid.component';
 import { ElsaBarComponent } from './elsa-bar/elsa-bar.component';
 import { ElsaGhostComponent } from './elsa-ghost/elsa-ghost.component';
-import { ProgressPopoverComponent } from './progress-popover/progress-popover.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,6 @@ import { ProgressPopoverComponent } from './progress-popover/progress-popover.co
     MetricGridComponent,
     ElsaBarComponent,
     ElsaGhostComponent,
-    ProgressPopoverComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +24,6 @@ import { ProgressPopoverComponent } from './progress-popover/progress-popover.co
     MetricPaneComponent,
     MetricGridComponent,
     ElsaBarComponent,
-    ProgressPopoverComponent
   ]
 })
 export class ComponentsModule { }

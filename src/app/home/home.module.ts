@@ -6,9 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { AppModule } from '../app.module';
-import { ComponentsModule } from '../components/components.module';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
-import { ProgressPopoverComponent } from '../components/progress-popover/progress-popover.component';
+import { ComponentsModule } from '@components/components.module';
+import { ProgressTableModule } from '@components/progress-table/progress-table.module';
 
 @NgModule({
   imports: [
@@ -22,11 +21,8 @@ import { ProgressPopoverComponent } from '../components/progress-popover/progres
       }
     ]),
     ComponentsModule,
-    NgxDatatableModule
+    ProgressTableModule
   ],
   declarations: [HomeComponent],
-  entryComponents: [
-    ProgressPopoverComponent
-  ]
 })
 export class HomeModule {}
