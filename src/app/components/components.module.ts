@@ -20,6 +20,8 @@ import { ElsaGhostComponent } from './elsa-ghost/elsa-ghost.component';
     IonicModule
   ],
   exports: [
+    CommonModule,
+    IonicModule,
     NavbarComponent,
     MetricPaneComponent,
     MetricGridComponent,

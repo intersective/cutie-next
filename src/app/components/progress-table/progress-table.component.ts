@@ -45,7 +45,8 @@ export class ProgressTableComponent implements OnInit {
     });
     this.rows[index].progress = Array(10).fill({}).map(this.randomProgress).concat(Array(5).fill({
       name: 'assessment name',
-      due_date: '2019-09-08 07:00:00',
+      dueDate: '08 Sept 2019 07:00:00',
+      submissionDate: '01 Sept 2019 07:00:00',
       status: 'not started',
       overdue: false
     }));
@@ -61,20 +62,21 @@ export class ProgressTableComponent implements OnInit {
   }
 
   randomTeam() {
-    if (Math.random() < 0.3) {
+    if (Math.random() < 0.4) {
       return 'Team 1';
     }
-    if (Math.random() < 0.6) {
+    if (Math.random() < 0.8) {
       return 'Team 2';
     }
-    return '';
+    return null;
   }
 
   randomProgress(x) {
     const status = ['not started', 'in progress', 'done', 'pending review', 'pending approval', 'published'];
     return {
       name: 'assessment name',
-      due_date: '2019-01-08 07:00:00',
+      dueDate: '01 Aug 2019 07:00:00',
+      submissionDate: Math.random() > 0.3 ? '01 Sept 2019 07:00:00' : '',
       status: status[Math.floor( Math.random() * status.length )],
       overdue: Math.random() > 0.7
     };
@@ -101,5 +103,7 @@ export class ProgressTableComponent implements OnInit {
       progressRef.nativeElement.scrollTo({left: scrollLeft});
     });
   }
-
+  test(event) {
+    console.log(event);
+  }
 }
