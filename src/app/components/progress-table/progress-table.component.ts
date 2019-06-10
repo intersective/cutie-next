@@ -24,9 +24,12 @@ export class ProgressTableComponent implements OnInit {
     this.loading = true;
     setTimeout(() => {
       const rows = [];
-      ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach(st => {
+      ['Caramel Dundee', 'Gosinder Shah', 'Mein Black', 'Gos Baxter', 'Monday Blighton', 'Joreis Park', 'Dimitry Ricks', 'Desean Ning'].forEach((st, i) => {
         rows.push({
-          student: st,
+          student: {
+            name: st,
+            email: 'user' + i + '@practera.com'
+          },
           team: this.randomTeam(),
           progress: []
         });

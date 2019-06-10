@@ -47,7 +47,10 @@
           <ion-avatar>
             <img src="./assets/placeholders/admin-profile-picture.png" alt="Admin">
           </ion-avatar>
-          {{ value }}
+          <div>
+            <p class="name">{{ value.name }}</p>
+            <p class="email">{{ value.email }}</p>
+          </div>
         </div>
       </ng-template>
     </ngx-datatable-column>
@@ -116,7 +119,7 @@
         </div>
       </ng-template>
     </ngx-datatable-column>
-    <!-- <ngx-datatable-column
+    <ngx-datatable-column
       name="Action"
       [width]="90"
       [sortable]="true"
@@ -128,6 +131,6 @@
           <ion-icon slot="icon-only" name="more"></ion-icon>
         </ion-button>
       </ng-template>
-    </ngx-datatable-column> -->
+    </ngx-datatable-column>
   </ngx-datatable>
 </div>
